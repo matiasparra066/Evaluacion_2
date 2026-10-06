@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1 class="mb-2">Bienvenidos</h1>
+<p class="lead text-muted mb-4">Elige un tema para ver su galería de imágenes.</p>
+
+<div class="row g-4">
+    {% for tema in temas %}
+    <div class="col-12 col-md-6">
+        <div class="card h-100 shadow-sm tarjeta-tema">
+            <img src="{% static tema.imagenes.0.archivo %}" class="card-img-top"
+                 alt="{{ tema.imagenes.0.titulo }}">
+            <div class="card-body">
+                <h2 class="card-title h4">{{ tema.nombre }}</h2>
+                <p class="card-text">{{ tema.resumen }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <a href="{% url 'inicio:detalle_tema' tema.slug %}" class="btn btn-primary">Ver tema</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

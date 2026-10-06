@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Acerca de{% endblock %}
+
+{% block content %}
+<h1>Acerca de este sitio</h1>
+<p class="lead">Proyecto desarrollado en parejas con Django, Bootstrap, Git y GitHub.</p>
+<ul class="list-group">
+    {% for tema in temas %}
+    <li class="list-group-item">
+        <a href="{% url 'inicio:detalle_tema' tema.slug %}">{{ tema.nombre }}</a>
+        <span class="text-muted">&mdash; {{ tema.imagenes|length }} imágenes</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

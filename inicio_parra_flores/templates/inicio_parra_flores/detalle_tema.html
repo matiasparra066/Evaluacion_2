@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ tema.nombre }}{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'inicio:lista_temas' %}">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ tema.nombre }}</li>
+    </ol>
+</nav>
+
+<h1>{{ tema.nombre }}</h1>
+<p class="lead">{{ tema.descripcion }}</p>
+
+<div id="carruselTema" class="carousel slide shadow-sm my-4" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        {% for img in tema.imagenes %}
+        <button type="button" data-bs-target="#carruselTema" data-bs-slide-to="{{ forloop.counter0 }}"
+                {% if forloop.first %}class="active" aria-current="true"{% endif %}
+                aria-label="Imagen {{ forloop.counter }}"></button>
+        {% endfor %}
+    </div>
+    <div class="carousel-inner">
+        {% for img in tema.imagenes %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{% static img.archivo %}" class="d-block w-100" alt="{{ img.titulo }}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>{{ img.titulo }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselTema" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselTema" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+<a href="{% url 'inicio:lista_temas' %}" class="btn btn-outline-secondary">&larr; Volver al listado</a>
+{% endblock %}
