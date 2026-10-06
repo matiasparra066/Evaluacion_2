@@ -1,0 +1,19 @@
+.tarjeta-tema {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.tarjeta-tema:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .15) !important;
+}
+.tarjeta-tema .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+.carousel-item img {
+    max-height: 480px;
+    object-fit: cover;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, .45);
+    border-radius: .5rem;
+}
