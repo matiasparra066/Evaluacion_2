@@ -13,9 +13,9 @@ TEMAS = [
         ),
         "resumen": "Desiertos, volcanes, lagos y glaciares de norte a sur.",
         "imagenes": [
-            {"archivo": "images/paisajes/desierto.svg", "titulo": "Desierto de Atacama"},
-            {"archivo": "images/paisajes/volcan.svg", "titulo": "Volcán Osorno"},
-            {"archivo": "images/paisajes/glaciar.svg", "titulo": "Glaciares de la Patagonia"},
+            {"archivo": "images/paisajes/desierto.jpg", "titulo": "Desierto de Atacama"},
+            {"archivo": "images/paisajes/volcan.jpg", "titulo": "Volcán Osorno"},
+            {"archivo": "images/paisajes/glaciar.jpg", "titulo": "Glaciares de la Patagonia"},
         ],
     },
     {
@@ -28,8 +28,8 @@ TEMAS = [
         ),
         "resumen": "Empanadas, pastel de choclo y más sabores tradicionales.",
         "imagenes": [
-            {"archivo": "images/cocina/empanada.svg", "titulo": "Empanada de pino"},
-            {"archivo": "images/cocina/pastel.svg", "titulo": "Pastel de choclo"},
+            {"archivo": "images/cocina/empanada.jpg", "titulo": "Empanada de pino"},
+            {"archivo": "images/cocina/pastel.jpg", "titulo": "Pastel de choclo"},
         ],
     },
 ]
